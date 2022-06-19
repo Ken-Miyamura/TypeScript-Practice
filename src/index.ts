@@ -1,8 +1,12 @@
 import World from './world';
+import { sumProductPrice } from './function/parameter';
 
 const root = document.getElementById('root');
 const world = new World('Hello World');
 world.sayHello(root);
+
+const sumPrice = sumProductPrice(100, 200, 300, 400, 500);
+console.log(sumPrice); //1500
 
 let a = 1 + 2;
 let b = a + 3;
