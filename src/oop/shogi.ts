@@ -54,3 +54,27 @@ abstract class Piece {
     // 移動できるか判定するメソッド。移動できる範囲は駒の種類によって違うので、抽象メソッドにしておき、サブクラスで具体的に実装する
     abstract canMoveTo(position: Position, player: Player): boolean;
 }
+
+/**
+ * Pieceクラスを継承し、具体的な駒クラスを生成（王将）
+ */
+class Osho extends Piece {
+    // 王将のcanMoveToメソッドを具体的に実装する
+    canMoveTo(position: Position, player: Player): boolean {
+        const distance = this.position.distanceFrom(position, player);
+        return (distance.numbers < 2 && distance.dan < 2);
+    }
+}
+
+/**
+ * 駒を生成し、初期化するクラス
+ */
+class Game {
+    private pieces = Game.makePieces();
+    private static makePieces() {
+        return [
+            new Osho('first', 5, '1'),
+            new Osho('second', 5, '9')
+        ]
+    }
+}
