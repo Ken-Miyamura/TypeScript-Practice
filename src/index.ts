@@ -2,6 +2,7 @@ import World from './world';
 import { sumProductPrice } from './function/parameter';
 import genericsBasicSample from './generics/basic';
 import genericsAdvancedSample from './generics/advanced';
+import {popularComic} from './interface/interface';
 
 const root = document.getElementById('root');
 const world = new World('Hello World');
@@ -13,6 +14,9 @@ console.log(sumPrice); //1500
 // ジェネリクス
 genericsBasicSample();
 genericsAdvancedSample();
+
+// interface
+console.log(popularComic.getPublishYear());
 
 let a = 1 + 2;
 let b = a + 3;
