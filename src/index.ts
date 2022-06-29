@@ -3,6 +3,9 @@ import { sumProductPrice } from './function/parameter';
 import genericsBasicSample from './generics/basic';
 import genericsAdvancedSample from './generics/advanced';
 import {popularComic} from './interface/interface';
+import callbackSample from './asynchonous/callback';
+import promiseSample from './asynchonous/promise';
+import asyncAwaitSample from './asynchonous/asyncAwait';
 
 const root = document.getElementById('root');
 const world = new World('Hello World');
@@ -17,6 +20,11 @@ genericsAdvancedSample();
 
 // interface
 console.log(popularComic.getPublishYear());
+
+// 非同期
+// callbackSample();
+promiseSample();
+asyncAwaitSample();
 
 let a = 1 + 2;
 let b = a + 3;
